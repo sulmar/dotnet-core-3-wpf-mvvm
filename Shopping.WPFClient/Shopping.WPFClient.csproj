@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>dotnet_core_3_wpf_mvvm</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bogus" Version="28.4.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shopping.Domain\Shopping.Domain.csproj" />
+    <ProjectReference Include="..\Shopping.Infrastructure\Shopping.Infrastructure.csproj" />
+    <ProjectReference Include="..\Shopping.ViewModels\Shopping.ViewModels.csproj" />
+  </ItemGroup>
+
+
+</Project>
