@@ -26,7 +26,7 @@ namespace dotnet_core_3_wpf_mvvm
         public ViewModelLocator()
         {
             IConfigurationBuilder builder = new ConfigurationBuilder()
-              .AddJsonFile("appsettings.json", optional: true);
+              .AddJsonFile("appsettings.json", optional: false);
             Configuration = builder.Build();
 
             var serviceCollection = new ServiceCollection();
@@ -43,8 +43,8 @@ namespace dotnet_core_3_wpf_mvvm
 
             services.AddScoped<ICustomerService, FakeCustomerService>();
             services.AddScoped<Faker<Customer>, CustomerFaker>();
+            services.Configure<FakeCustomerServiceOptions>(options => options.Count = 100);
 
-         
         }
 
     }
