@@ -6,6 +6,7 @@ using Shopping.Domain.Models;
 using Shopping.Domain.Services;
 using Shopping.Inftrastructure;
 using Shopping.Inftrastructure.Fakers;
+using Shopping.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -35,11 +36,15 @@ namespace dotnet_core_3_wpf_mvvm
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<INavigationService, FrameNavigationService>();
+
             services.AddScoped<ShellViewModel>();
             services.AddScoped<CustomersViewModel>();
 
-            services.AddSingleton<ICustomerService, FakeCustomerService>();
+            services.AddScoped<ICustomerService, FakeCustomerService>();
             services.AddScoped<Faker<Customer>, CustomerFaker>();
+
+         
         }
 
     }
